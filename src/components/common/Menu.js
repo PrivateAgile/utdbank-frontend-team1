@@ -20,7 +20,6 @@ const Menu = () => {
                   Home
                 </Link>
               </li>
-
               <li className="nav-item">
                 <Link to="/about" className="nav-link">
                   About Us
