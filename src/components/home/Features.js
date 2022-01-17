@@ -4,10 +4,7 @@ import SectionTitleItem from "./SectionTitleItem";
 
 const Features = () => {
   return (
-    <section
-      className="feature-section p-tb-100 overflow-x-hidden"
-      id="feature-section"
-    >
+    <section className="feature-section p-tb-100 overflow-x-hidden">
       <div className="container">
         <SectionTitle
           title="Our valuable features"
