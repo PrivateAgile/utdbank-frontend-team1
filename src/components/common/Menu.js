@@ -19,7 +19,6 @@ const Menu = () => {
                   Home
                 </a>
               </li>
-
               <li className="nav-item">
                 <a href="about-us.html" className="nav-link">
                   About Us
