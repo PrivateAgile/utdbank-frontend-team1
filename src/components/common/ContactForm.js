@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import MaskInput from "react-maskinput/lib";
+
 const ContactForm = ({ formTitle, buttonTitle }) => {
   const [loading, setLoading] = useState(false);
   const initialValues = {
@@ -13,7 +15,13 @@ const ContactForm = ({ formTitle, buttonTitle }) => {
   const validationSchema = Yup.object({
     name: Yup.string().required("Please enter your name"),
     email: Yup.string().email().required("Please enter your email"),
-    phone_number: Yup.string().required("Please enter your phone number"),
+    phone_number: Yup.string()
+      .required("Please enter your phone number")
+      .test(
+        "includes_",
+        "Please enter a valid phone number.",
+        (value) => value && !value.includes("_")
+      ),
     msg_subject: Yup.string().required("Please enter your subject"),
     message: Yup.string().required("Write your message here"),
   });
@@ -98,7 +106,7 @@ const ContactForm = ({ formTitle, buttonTitle }) => {
                                   <i className="flaticon-phone-call"></i>
                                 </span>
                               </div>
-                              <input
+                              <MaskInput
                                 type="text"
                                 name="phone_number"
                                 id="phone_number"
@@ -108,6 +116,9 @@ const ContactForm = ({ formTitle, buttonTitle }) => {
                                 placeholder="Phone*"
                                 {...formik.getFieldProps("phone_number")}
                                 isInvalid={!!formik.errors.phone_number}
+                                maskChar="_"
+                                mask="(000) 000-0000"
+                                showMask
                               />
                             </div>
                             <div className="help-block with-errors"></div>
