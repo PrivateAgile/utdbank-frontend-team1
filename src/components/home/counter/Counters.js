@@ -1,13 +1,11 @@
 import React from "react";
 import SectionTitle from "../../common/SectionTitle";
 import CounterItem from "./CounterItem";
-
 const Counters = () => {
   return (
     <section className="counter-section pt-100 pb-70">
       <div className="container">
         <SectionTitle title="We always try to evaluate customers Values" />
-
         <div className="counter-content">
           <CounterItem counter="70" size="lg" sign="+" title="Contributors" />
           <CounterItem
@@ -36,5 +34,4 @@ const Counters = () => {
     </section>
   );
 };
-
 export default Counters;
