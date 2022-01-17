@@ -6,10 +6,14 @@ import PricingPage from "../pages/PricingPage";
 import HomePage from "../pages/HomePage";
 import AboutUsPage from "../pages/AboutUsPage";
 import ContactPage from "../pages/ContactPage";
+import PrivacyPolicyPage from "../pages/PrivacyPolicyPage";
+import TermsPage from "../pages/TermsPage";
 
 const CustomRoutes = () => {
   return (
     <Routes>
+      <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+      <Route path="/terms" element={<TermsPage />} />
       <Route path="/service" element={<ServicePage />} />
       <Route path="/faqs" element={<FaqsPage />} />
       <Route path="/pricing" element={<PricingPage />} />
