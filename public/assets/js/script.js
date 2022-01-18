@@ -30,6 +30,7 @@ jQuery(function ($) {
         "modal-wrapper-active"
       );
     });
+
     $(".home-feature-carousel").owlCarousel({
       loop: false,
       margin: 35,
@@ -42,7 +43,9 @@ jQuery(function ($) {
       smartSpeed: 2500,
       responsive: { 0: { items: 1 }, 768: { items: 2 }, 1000: { items: 3 } },
     });
+
     $(".counter").counterUp({ delay: 10, time: 1000 });
+
     $(".client-carousel").owlCarousel({
       loop: false,
       margin: 0,
