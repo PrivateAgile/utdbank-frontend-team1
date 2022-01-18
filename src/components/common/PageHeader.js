@@ -5,14 +5,14 @@ const PageHeader = ({ image, title }) => {
   return (
     <div>
       <header
-        class="page-title page-bg"
+        className="page-title page-bg"
         style={{ backgroundImage: `url(assets/images/${image})` }}
       >
-        <div class="container">
-          <div class="page-title-inner">
-            <div class="section-title">
+        <div className="container">
+          <div className="page-title-inner">
+            <div className="section-title">
               <h1>{title}</h1>
-              <ul class="page-breadcrumbs">
+              <ul className="page-breadcrumbs">
                 <li>
                   <Link to="/">Home</Link>
                 </li>

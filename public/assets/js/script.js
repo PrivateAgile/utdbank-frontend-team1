@@ -9,8 +9,6 @@ jQuery(function ($) {
     }
   });
 
-
-
   $(document).ready(function () {
     $(".video-modal").magnificPopup({
       disableOn: 0,
@@ -32,8 +30,6 @@ jQuery(function ($) {
         "modal-wrapper-active"
       );
     });
-    
-    
     $(".home-feature-carousel").owlCarousel({
       loop: false,
       margin: 35,
@@ -46,9 +42,7 @@ jQuery(function ($) {
       smartSpeed: 2500,
       responsive: { 0: { items: 1 }, 768: { items: 2 }, 1000: { items: 3 } },
     });
-
     $(".counter").counterUp({ delay: 10, time: 1000 });
-    
     $(".client-carousel").owlCarousel({
       loop: false,
       margin: 0,
@@ -167,31 +161,7 @@ jQuery(function ($) {
         .siblings()
         .removeClass("faq-accordion-item-active");
     });
-    $(".authentication-tab-item").click(function () {
-      var tab_modal = $(this).attr("data-authentcation-tab");
-      $(this)
-        .addClass("authentication-tab-active")
-        .siblings()
-        .removeClass("authentication-tab-active");
-      $(
-        ".authentication-tab-details-item[data-authentcation-details=" +
-          tab_modal +
-          "]"
-      )
-        .addClass("authentication-tab-details-active")
-        .siblings()
-        .removeClass("authentication-tab-details-active");
-    });
-    $(".newsletter-form")
-      .validator()
-      .on("submit", function (event) {
-        if (event.isDefaultPrevented()) {
-          formErrorSub();
-          submitMSGSub(false, "Please enter your email correctly.");
-        } else {
-          event.preventDefault();
-        }
-      });
+
     function callbackFunction(resp) {
       if (resp.result === "success") {
         formSuccessSub();

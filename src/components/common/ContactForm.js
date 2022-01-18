@@ -179,7 +179,7 @@ const ContactForm = ({ formTitle, buttonTitle }) => {
                             <i className="flaticon-login"></i>
                             <i className="flaticon-login"></i>
                             {loading && (
-                              <div class="spinner-border spinner-border-sm"></div>
+                              <div className="spinner-border spinner-border-sm"></div>
                             )}
                             {buttonTitle}
                           </button>
