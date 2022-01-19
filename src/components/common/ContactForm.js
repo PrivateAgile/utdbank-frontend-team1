@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import MaskInput from "react-maskinput/lib";
+import { Form, FormControl } from "react-bootstrap";
 
 const ContactForm = ({ formTitle, buttonTitle }) => {
   const [loading, setLoading] = useState(false);
@@ -46,7 +47,7 @@ const ContactForm = ({ formTitle, buttonTitle }) => {
                 <div className="blog-comment-leave-area contact-comment-leave-area">
                   <h3 className="sub-section-title">{formTitle}</h3>
                   <div className="blog-comment-input-area mt-40">
-                    <form
+                    <Form
                       id="contactForm"
                       noValidate
                       onSubmit={formik.handleSubmit}
@@ -60,7 +61,8 @@ const ContactForm = ({ formTitle, buttonTitle }) => {
                                   <i className="flaticon-user"></i>
                                 </span>
                               </div>
-                              <input
+
+                              <FormControl
                                 type="text"
                                 name="name"
                                 id="name"
@@ -83,7 +85,7 @@ const ContactForm = ({ formTitle, buttonTitle }) => {
                                   <i className="flaticon-user"></i>
                                 </span>
                               </div>
-                              <input
+                              <FormControl
                                 type="email"
                                 name="email"
                                 id="email"
@@ -106,7 +108,7 @@ const ContactForm = ({ formTitle, buttonTitle }) => {
                                   <i className="flaticon-phone-call"></i>
                                 </span>
                               </div>
-                              <MaskInput
+                              <FormControl
                                 type="text"
                                 name="phone_number"
                                 id="phone_number"
@@ -116,6 +118,7 @@ const ContactForm = ({ formTitle, buttonTitle }) => {
                                 placeholder="Phone*"
                                 {...formik.getFieldProps("phone_number")}
                                 isInvalid={!!formik.errors.phone_number}
+                                as={MaskInput}
                                 maskChar="_"
                                 mask="(000) 000-0000"
                                 showMask
@@ -132,7 +135,7 @@ const ContactForm = ({ formTitle, buttonTitle }) => {
                                   <i className="flaticon-book"></i>
                                 </span>
                               </div>
-                              <input
+                              <FormControl
                                 type="text"
                                 name="msg_subject"
                                 id="msg_subject"
@@ -155,7 +158,8 @@ const ContactForm = ({ formTitle, buttonTitle }) => {
                                   <i className="flaticon-email"></i>
                                 </span>
                               </div>
-                              <textarea
+                              <FormControl
+                                as="textarea"
                                 name="message"
                                 className="form-control"
                                 id="message"
@@ -165,7 +169,7 @@ const ContactForm = ({ formTitle, buttonTitle }) => {
                                 placeholder="Your Message*"
                                 {...formik.getFieldProps("message")}
                                 isInvalid={!!formik.errors.message}
-                              ></textarea>
+                              />
                             </div>
                             <div className="help-block with-errors"></div>
                           </div>
@@ -187,7 +191,7 @@ const ContactForm = ({ formTitle, buttonTitle }) => {
                           <div className="clearfix"></div>
                         </div>
                       </div>
-                    </form>
+                    </Form>
                   </div>
                 </div>
               </div>

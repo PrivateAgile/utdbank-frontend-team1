@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const PricingAdvanced = () => {
   return (
@@ -99,7 +100,11 @@ const PricingAdvanced = () => {
               Google Analytics
             </li>
           </ul>
-          <button className="btn1 orange-gradient btn-with-image">
+          <button
+            as={Link}
+            to="/authentication"
+            className="btn1 orange-gradient btn-with-image"
+          >
             <i className="flaticon-login"></i>
             <i className="flaticon-login"></i>
             Get started
